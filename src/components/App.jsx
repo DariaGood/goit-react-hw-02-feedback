@@ -1,3 +1,7 @@
+import React from "react";
+
+import FeetbackButton from './feedbackCounter/FeedbackCounter'
+
 export const App = () => {
   return (
     <div
@@ -10,7 +14,8 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+<FeetbackButton 
+ />
     </div>
   );
 };
