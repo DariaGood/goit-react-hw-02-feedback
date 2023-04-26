@@ -1,6 +1,6 @@
 import React from "react";
 
-import FeetbackButton from './feedbackCounter/FeedbackCounter'
+import FeedbackCounter from './feedbackCounter/FeedbackCounter'
 
 export const App = () => {
   return (
@@ -14,7 +14,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-<FeetbackButton 
+<FeedbackCounter 
  />
     </div>
   );
