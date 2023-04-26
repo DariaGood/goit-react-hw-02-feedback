@@ -1,21 +1,10 @@
 import React from 'react';
-import Notification from '../notification/Notification';
-
+import PropTypes from 'prop-types';
 function Statistics(props) {
   const { good, neutral, bad, total, positivePercentage } = props;
-  // let feedbackStatus;
-  // if  (good ===0){
-  //   feedbackStatus = <Notification message="There is no feedback"/>
-  // } else {
-  //   feedbackStatus =
-  // }
+
   return (
-    <div>
-      {' '}
-      <h2>Statistics</h2>
-      {total === 0 ? (
-        <Notification message="There is no feedback" />
-      ) : (
+    
         <div>
           <p>Good: {good}</p>
           <p>Neutral: {neutral}</p>
@@ -30,9 +19,17 @@ function Statistics(props) {
               : '0%'}
           </p>
         </div>
-      )}
-    </div>
+    
+  
   );
+}
+//good, neutral, bad, total, positivePercentage
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.string.isRequired,
 }
 
 export default Statistics;

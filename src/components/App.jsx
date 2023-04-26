@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Container from './container/Container';
 import Section from './section/Section';
 import Statistics from './statistics/Statistics';
 import FeedbackOptions from './feedbackOptions/FeedbackOptions';
+import Notification from './notification/Notification';
 
 export class App extends Component {
   constructor(props) {
@@ -41,16 +41,21 @@ export class App extends Component {
       <div
         style={{
           height: '100vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
+          maxWidth: '818px',
+          margin: '0px auto',
+          padding: '70px 0px',
+          //display: 'flex',
+          //justifyContent: 'center',
+          // alignItems: 'center',
           fontSize: 40,
           color: '#010101',
         }}
       >
-        <Container>
-          <Section title="Please leave feedback">
-            <FeedbackOptions onLeaveFeedback={this.handleClick} />
+        <Section title="Please leave feedback">
+          <FeedbackOptions onLeaveFeedback={this.handleClick} />
+          {total === 0 ? (
+            <Notification message="There is no feedback" />
+          ) : (
             <Statistics
               good={good}
               neutral={neutral}
@@ -58,8 +63,8 @@ export class App extends Component {
               total={total}
               positivePercentage={positivePercentage}
             />
-          </Section>
-        </Container>
+          )}
+        </Section>
       </div>
     );
   }
