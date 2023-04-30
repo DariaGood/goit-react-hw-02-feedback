@@ -51,7 +51,7 @@ export class App extends Component {
         <Section title="Please leave feedback">
           <FeedbackOptions 
           onLeaveFeedback={(state) => this.handleClick(state)}
-          options={['Good', 'Neutral', 'Bad']} 
+          options={['good', 'neutral', 'bad']} 
           />
           {total === 0 ? (
             <Notification message="There is no feedback" />
