@@ -4,6 +4,8 @@ import Statistics from './statistics/Statistics';
 import FeedbackOptions from './feedbackOptions/FeedbackOptions';
 import Notification from './notification/Notification';
 
+const options = ['good', 'neutral', 'bad'];
+
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -44,15 +46,15 @@ export class App extends Component {
           maxWidth: '818px',
           margin: '0px auto',
           padding: '70px 0px',
-          //display: 'flex',
-          //justifyContent: 'center',
-          // alignItems: 'center',
           fontSize: 40,
           color: '#010101',
         }}
       >
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.handleClick} />
+          <FeedbackOptions 
+          onLeaveFeedback={(state) => this.handleClick(state)}
+          options={['good', 'neutral', 'bad']} 
+          />
           {total === 0 ? (
             <Notification message="There is no feedback" />
           ) : (
