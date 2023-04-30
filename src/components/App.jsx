@@ -4,8 +4,6 @@ import Statistics from './statistics/Statistics';
 import FeedbackOptions from './feedbackOptions/FeedbackOptions';
 import Notification from './notification/Notification';
 
-const options = ['good', 'neutral', 'bad'];
-
 export class App extends Component {
   constructor(props) {
     super(props);
